@@ -53,12 +53,12 @@ app.delete("/api/todos/:id", async (req, res) => {
 
 // Servir archivos estáticos de React en producción
 if (process.env.NODE_ENV === 'production') {
-  // Le decimos a Express dónde está el código del cliente
+  // Path código del cliente
   app.use(express.static('./client/build'));
 
   const path = require('path');
   // Para cualquier otra ruta que no sea de la API, sirve el index.html de React
-  app.get(/^(?!\/api).*/, (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }

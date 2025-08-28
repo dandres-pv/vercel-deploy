@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Este es el "plano" de cada tarea
 const TodoSchema = new Schema({
   text: {
     type: String,
@@ -17,5 +16,4 @@ const TodoSchema = new Schema({
   }
 });
 
-// Exportamos el modelo para poder usarlo en otras partes de la app
 module.exports = mongoose.model('Todo', TodoSchema);

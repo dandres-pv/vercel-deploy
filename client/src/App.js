@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// La URL de nuestro backend. Para desarrollo, es localhost.
-// Para producción, la cambiaremos si es necesario, pero con Render no hará falta.
-const API_URL = '/api/todos';
-
+// La URL del backend.
+// const API_URL = '';
+ 
 function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
-  // useEffect se ejecuta cuando el componente se monta por primera vez.
-  // Es perfecto para cargar los datos iniciales.
+  // Carga de datos iniciales.
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -63,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Mi Lista de Tareas MERNN</h1>
+        <h1>Mi Lista de Tareas (MERN)</h1>
       </header>
       <form onSubmit={handleSubmit}>
         <input
