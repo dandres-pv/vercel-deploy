@@ -51,8 +51,6 @@ app.delete('/api/todos/:id', async (req, res) => {
   res.json({ message: "Tarea eliminada", result });
 });
 
-console.log(`El entorno actual es: ${process.env.NODE_ENV}`);
-
 // Servir archivos estáticos de React en producción
 if (process.env.NODE_ENV === 'production') {
   // Le decimos a Express dónde está el código del cliente
