@@ -4,7 +4,7 @@ import './App.css';
 
 // La URL de nuestro backend. Para desarrollo, es localhost.
 // Para producción, la cambiaremos si es necesario, pero con Render no hará falta.
-const API_URL = 'https://mern-todolist-vg9r.onrender.com/api/todos';
+const API_URL = '/api/todos';
 
 function App() {
   const [todos, setTodos] = useState([]);
