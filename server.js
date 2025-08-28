@@ -23,13 +23,13 @@ app.use(express.json()); // Permite que el servidor entienda el formato JSON
 // --- Rutas de la API ---
 
 // OBTENER todas las tareas
-app.get(`/api/todos`, async (req, res) => {
+app.get("/api/todos", async (req, res) => {
   const todos = await Todo.find();
   res.json(todos);
 });
 
 // CREAR una nueva tarea
-app.post(`/api/todos`, async (req, res) => {
+app.post("/api/todos", async (req, res) => {
   const newTodo = new Todo({
     text: req.body.text
   });
@@ -38,7 +38,7 @@ app.post(`/api/todos`, async (req, res) => {
 });
 
 // ACTUALIZAR una tarea (marcar como completada/incompleta)
-app.put(`/api/todos/:id`, async (req, res) => {
+app.put("/api/todos/:id", async (req, res) => {
   const todo = await Todo.findById(req.params.id);
   todo.completed = !todo.completed;
   await todo.save();
@@ -46,7 +46,7 @@ app.put(`/api/todos/:id`, async (req, res) => {
 });
 
 // ELIMINAR una tarea
-app.delete(`/api/todos/:id`, async (req, res) => {
+app.delete("/api/todos/:id", async (req, res) => {
   const result = await Todo.findByIdAndDelete(req.params.id);
   res.json({ message: "Tarea eliminada", result });
 });
