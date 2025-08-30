@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
+// Este es el "plano" de cada tarea
 const TodoSchema = new Schema({
   text: {
     type: String,
@@ -16,4 +17,5 @@ const TodoSchema = new Schema({
   }
 });
 
+// Usamos la sintaxis 'export default' de ES Modules
 export default mongoose.models.Todo || mongoose.model('Todo', TodoSchema);
