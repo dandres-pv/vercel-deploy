@@ -1,10 +1,12 @@
 {
   "name": "mern-todolist",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.mjs",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && npm run build",
+    "vercel-build": "npm run build"
   },
   "keywords": [],
   "author": "",
